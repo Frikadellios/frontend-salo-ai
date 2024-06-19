@@ -4,7 +4,7 @@
   "version": "1.0.1",
   "scripts": {
     "dev": "bunx --bun astro dev --verbose",
-    "start": "bun astro check --verbose && bunx --bun astro dev --verbose",
+    "start": "wrangler types && bun astro check --verbose && bunx --bun astro dev --verbose",
     "build": "bun astro check --verbose && bunx --bun astro build --verbose",
     "preview": "bunx --bun astro build && wrangler pages dev",
     "astro": "astro",
@@ -21,7 +21,7 @@
     "not dead"
   ],
   "engines": {
-    "node": "18.0.0 - 20.14.0"
+    "node": "20.14.0"
   },
   "dependencies": {
     "@appwrite.io/pink": "^0.24.0",
@@ -33,6 +33,7 @@
     "@astrojs/rss": "^4.0.6",
     "@astrojs/sitemap": "^3.1.6",
     "@astrojs/ts-plugin": "^1.8.0",
+    "@rollup/plugin-yaml": "^4.1.2",
     "@tailwindcss/postcss": "^4.0.0-alpha.16",
     "@tailwindcss/vite": "^4.0.0-alpha.16",
     "appwrite": "14.0.1",
@@ -69,6 +70,9 @@
     "typescript": "^5.0.0"
   },
   "trustedDependencies": [
-    "@biomejs/biome"
+    "@biomejs/biome",
+    "esbuild",
+    "sharp",
+    "workerd"
   ]
 }
