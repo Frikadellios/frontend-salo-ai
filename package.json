@@ -1,7 +1,7 @@
 {
   "name": "frontend-salo-ai",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "scripts": {
     "dev": "bunx --bun astro dev --verbose",
     "start": "bun astro check --verbose && bunx --bun astro dev --verbose",
@@ -9,26 +9,66 @@
     "preview": "bunx --bun astro build && wrangler pages dev",
     "astro": "astro",
     "deploy": "bunx --bun astro build && wrangler pages deploy",
-    "cf-typegen": "wrangler types"
+    "cf-typegen": "wrangler types",
+    "biomes": "bunx @biomejs/biome check --write .",
+    "editorconfig": "editorconfig-checker -exclude \"**/node_modules/**\"",
+    "test": "playwright test index.spec.ts && playwright show-report"
+  },
+  "browserslist": [
+    "> 0.25%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead"
+  ],
+  "engines": {
+    "node": "18.0.0 - 20.14.0"
   },
   "dependencies": {
+    "@appwrite.io/pink": "^0.24.0",
     "@astrojs/check": "^0.7.0",
     "@astrojs/cloudflare": "^10.4.1",
+    "@astrojs/mdx": "^3.1.1",
+    "@astrojs/partytown": "^2.1.1",
     "@astrojs/react": "^3.6.0",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
+    "@astrojs/rss": "^4.0.6",
+    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/ts-plugin": "^1.8.0",
+    "@tailwindcss/postcss": "^4.0.0-alpha.16",
+    "@tailwindcss/vite": "^4.0.0-alpha.16",
+    "appwrite": "14.0.1",
     "astro": "^4.10.3",
+    "autoprefixer": "^10.4.19",
+    "browserslist": "^4.23.1",
+    "detect-browser-es": "^0.1.0",
+    "editorconfig-checker": "^5.1.8",
+    "nanostores": "^0.10.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "typescript": "^5.4.5"
+    "sanitize-html": "^2.13.0",
+    "sharp": "^0.33.4",
+    "tailwindcss": "^4.0.0-alpha.16",
+    "typescript": "^5.0.0",
+    "unplugin-auto-import": "^0.17.6",
+    "vite-plugin-inspect": "^0.8.4"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.8.1",
     "@cloudflare/workers-types": "^4.20240614.0",
-    "wrangler": "^3.61.0",
-    "@types/bun": "latest"
+    "@playwright/test": "^1.44.1",
+    "@types/bun": "latest",
+    "@types/node": "^20.14.5",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/sanitize-html": "^2.11.0",
+    "prettier": "^3.3.2",
+    "prettier-plugin-astro": "^0.14.0",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "wrangler": "^3.61.0"
   },
-  "module": "index.ts",
   "peerDependencies": {
     "typescript": "^5.0.0"
-  }
+  },
+  "trustedDependencies": [
+    "@biomejs/biome"
+  ]
 }
